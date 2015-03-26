@@ -15,26 +15,23 @@ mechanise.tumblr.com
 {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
  
  
-<meta name="color:Text" content="#bbbbbb"/>
-<meta name="color:Desc" content="#bbbbbb"/>
-<meta name="color:Link" content="#aaaaaa"/>
-<meta name="color:Tags" content="#cccccc"/>
-<meta name="color:Hover" content="#f1f1f1"/>
-<meta name="color:scrollbar" content="#ffffff"/>
-<meta name="color:scrollbarbg" content="#ffffff"/>
+<meta name="color:text" content="#787878"/>
+<meta name="color:tags" content="#cccccc"/>
 <meta name="color:bg" content="#fff"/>
+<meta name="color:scrollbar" content="#000"/>
+<meta name="color:scrollbarbg" content="#ffffff"/>
 <meta name="color:accent" content="#E0E0E0"/>
 <meta name="color:borders" content="#E0E0E0"/>
  
-<meta name="image:sidebar" content=""/>
+<meta name="image:sidebar" content="http://static.tumblr.com/f1ada2d48d38b844eb4101b6957df4bc/vmt2zlc/GOFnltdlb/tumblr_static_vze5hv2gapwg88soc8wk8cgg.png"/>
  
  <meta name="text:body" content="Roboto"/>
-<meta name="text:link1" content="">
-<meta name="text:link1 url" content="/">    
-<meta name="text:link2" content="">
-<meta name="text:link2 url" content="/">
-<meta name="text:link3" content="">
-<meta name="text:link3 url" content="/">
+<meta name="text:link1" content="abt">
+<meta name="text:link1 url" content="/about">    
+<meta name="text:link2" content="past">
+<meta name="text:link2 url" content="/archive">
+<meta name="text:link3" content="ask">
+<meta name="text:link3 url" content="/ask">
 <meta name="text:link4" content="">
 <meta name="text:link4 url" content="/">
  
@@ -63,12 +60,12 @@ mechanise.tumblr.com
 <style type="text/css">
 /*highlight text */
 ::selection {
-  background: {color:link}; /* WebKit/Blink Browsers */
-  color:{color:postbackground};
+  background: {color:text}; /* WebKit/Blink Browsers */
+  color:{color:bg};
 }
 ::-moz-selection {
-  background: {color:link}; /* WebKit/Blink Browsers */
-  color:{color:accent};
+  background: {color:text}; /* WebKit/Blink Browsers */
+  color:{color:bg};
 }
  
  
@@ -368,10 +365,6 @@ blockquote {
     margin-top:-20px;
 }
  
-#info a:hover{
-    color:{color:links};
-}
-
 #perm {
     margin-top:-17px;
     text-align:center;
@@ -567,8 +560,6 @@ blockquote {
      
          <div id="separator2"></div>
         <div class="links">
-            <a href="/">home</a>
-            <a href="/ask">ask</a>
             <a href="{text:link1 url}">{text:link1}</a>
             <a href="{text:link2 url}">{text:link2}</a>
             <a href="{text:link3 url}">{text:link3}</a>
