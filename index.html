@@ -16,11 +16,8 @@ don't remove credit sweetie (:
 {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
  
  
-<meta name="color:Text" content="#bbbbbb"/>
-<meta name="color:Desc" content="#bbbbbb"/>
-<meta name="color:Link" content="#aaaaaa"/>
-<meta name="color:Tags" content="#cccccc"/>
-<meta name="color:Hover" content="#f1f1f1"/>
+<meta name="color:text" content="#bbbbbb"/>
+<meta name="color:tags" content="#cccccc"/>
 <meta name="color:scrollbar" content="#ffffff"/>
 <meta name="color:scrollbarbg" content="#ffffff"/>
 <meta name="color:bg" content="#fff"/>
@@ -74,12 +71,12 @@ don't remove credit sweetie (:
 <style type="text/css">
 /*highlight text */
 ::selection {
-  background: {color:link}; /* WebKit/Blink Browsers */
-  color:{color:postbackground};
+  background: {color:text}; /* WebKit/Blink Browsers */
+  color:{color:bg};
 }
 ::-moz-selection {
-  background: {color:link}; /* WebKit/Blink Browsers */
-  color:{color:accent};
+  background: {color:text}; /* WebKit/Blink Browsers */
+  color:{color:bg};
 }
  
  
@@ -585,10 +582,6 @@ margin: 10px 0 0 95px;
  
 #info a {
     margin-top:-20px;
-}
- 
-#info a:hover{
-    color:{color:links};
 }
 
 #perm {
