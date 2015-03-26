@@ -1,4 +1,6 @@
 
+ /* ----UPDATES TAB --- */
+ 
  /** colour of title text and background **/
     .h-title {
         color:{color:link hover};
@@ -27,8 +29,17 @@
 /** colour of scrollbar **/ 
     .ac-plus15-lines::-webkit-scrollbar-thumb:vertical {background:{color:scrollbar};}
 
+#showing {
+    margin-right:25px;
+    text-align:center;
+}
+
 #hovertab {
-    width:130px; height:25px; position:fixed; top:20px; right:8px;
+    width:130px;
+    height:25px;
+    position:fixed;
+    top:20px;
+    right:0px;
     z-index:9999; overflow:hidden;
     line-height:14px;
 }
@@ -43,7 +54,7 @@
 #hovertab:hover img {margin-left:40px; opacity:1;}
 
 #hover-cont {
-    width:130px; height:800px; margin-top:10px; margin-right:-300px;}
+    width:130px; height:800px; margin-top:12px; margin-right:-300px;}
 
 #hovertab:hover #hover-cont {margin-left:0px;}
 
@@ -137,3 +148,4 @@
     -o-transition-transition:all 0.4s ease-in-out;
     -moz-transition-duration:all 0.4s ease-in-out;
     -ms-transition-duration:all 0.4s ease-in-out;}
+ 
