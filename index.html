@@ -29,6 +29,7 @@ mechanise.tumblr.com
 <meta name="image:sidebar" content=""/>
  
 <meta name="text:body" content="Roboto"/>
+<meta name="text:postspacing" content="150"/>
 <meta name="text:link1" content="">
 <meta name="text:link1 url" content="/">    
 <meta name="text:link2" content="">
@@ -509,6 +510,10 @@ margin: 10px 0 0 95px;
     margin-bottom:50px;
 }
 
+#postcontainer {
+    margin-top:150px;
+}
+
 #posts {
 {block:if500px}   
     width:500px;
@@ -530,8 +535,7 @@ margin: 10px 0 0 95px;
 {/block:if250px} 
     padding-bottom:20px;
     padding:10px;
-    margin-top:250px;
-    margin-bottom:-100px;
+    margin-bottom:{text:postspacing}px;
     background-color:{color:Post};
     border: 1px solid;
     float:center;
@@ -770,8 +774,10 @@ margin: 10px 0 0 95px;
  <div id="between"></div>
  <div id="right"></div> -->
 <div id="entries">
-<div id="sidebar">
-        <div id="sidebarimage"><a href="/"><img src="{image:sidebar}"></a></div>
+    <div id="sidebar">
+        <div id="sidebarimage">
+            <a href="/"><img src="{image:sidebar}"></a>
+        </div>
         <div class="title">{Title}</div>
         <div id="separator"></div>
         <div id="desc">
@@ -787,7 +793,8 @@ margin: 10px 0 0 95px;
             <a href="{text:link3 url}">{text:link3}</a>
             <a href="{text:link4 url}">{text:link4}</a>
         </div>
-</div>
+    </div>
+    <div id="postcontainer">
 {block:Posts}<div id="posts">
  
  
@@ -876,6 +883,7 @@ margin: 10px 0 0 95px;
 </div>
 </div>
 {/block:Posts}
+</div>
 {block:PostNotes}<div id="notes">{PostNotes}</div>{/block:PostNotes}
 <div id="footer">
     <div class="pagi">
