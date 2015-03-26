@@ -1,0 +1,139 @@
+
+ /** colour of title text and background **/
+    .h-title {
+        color:{color:link hover};
+        background:rgba(0,0,0,0);
+        border:1px solid {color:link hover};
+        margin-right:10px;
+    }
+/** colour of title background  on hover and when tab is open **/
+.h-title:hover, .ss-ud input:checked + label .h-title {
+    background:rgba(0,0,0,0);
+    margin-left: 10px;
+    padding: 4px;
+}
+/** colour of close text **/
+    .close {color:{color:link hover};}
+/** colour of close text on hover **/
+    .close:hover {color:{color:link};}
+/** colour of border at the bottom of tabs **/ 
+    .ss-ud input:checked ~ article {
+        border:1px solid {color:link hover};
+    }
+/** background colour of tabs **/
+    .ss-ud article {background:rgba(0,0,0,0);}
+/** colour of text in tabs **/    
+    .ss-ud input:checked ~ article {color:{color:Text};}
+/** colour of scrollbar **/ 
+    .ac-plus15-lines::-webkit-scrollbar-thumb:vertical {background:{color:scrollbar};}
+
+#hovertab {
+    width:130px; height:25px; position:fixed; top:20px; right:8px;
+    z-index:9999; overflow:hidden;
+    line-height:14px;
+}
+
+#hovertab img {pointer-events:none; margin-left:0px; width:40px;
+    opacity:0.6;}
+
+#hovertab:hover {
+    width:130px; height:300px;
+}
+
+#hovertab:hover img {margin-left:40px; opacity:1;}
+
+#hover-cont {
+    width:130px; height:800px; margin-top:10px; margin-right:-300px;}
+
+#hovertab:hover #hover-cont {margin-left:0px;}
+
+.ss-ud article, .ss-ud input:checked ~ article {
+    transition: height 0.3 ease-in-out, box-shadow 0.6s linear;} 
+    
+.ss-ud {width:130px; margin-right:0px; margin-top:0px;}
+
+.h-title, .close {
+    cursor:pointer;
+    margin-top:8px; margin-right:0px;
+    display:block; width:100px;
+    padding:3px 2px 4px 2px; text-align:center; 
+    font-family:'Open Sans'; font-size:9px; text-transform:uppercase;
+    letter-spacing:2px;}
+    
+.ss-ud input:checked + label .close {padding:0px; opacity:0;
+    transition:all 0.2s ease-out; 
+    -webkit-transition-duration:all 0.2s ease-out;
+    -o-transition-transition:all 0.2s ease-out;
+    -moz-transition-durartion:all 0.2s ease-out;
+    -ms-transition-durartion:all 0.2s ease-out;}
+
+.close {opacity:1; background:transparent;}
+
+.ss-ud input:checked + label .h-title {
+    width:110px; margin-right:-20px;
+    transition:all 0.2s ease-out;
+    -webkit-transition-duration:all 0.2s ease-out;
+    -o-transition-transition:all 0.2s ease-out;
+    -moz-transition-duration:all 0.2s ease-out;
+    -ms-transition-duration:all 0.2s ease-out;
+}
+
+.ss-ud input {display:none;}
+
+.ss-ud article {
+    overflow:hidden;
+    height:0px; position:relative;
+    font-family:'Open Sans'; 
+    text-align:center;
+    font-weight:500;
+    font-size:10px; 
+    color:{color:bodytext};
+    letter-spacing:1px;
+    margin-left:25px;
+    padding:0px;
+    width:110px;
+}
+
+.ss-ud img {
+    width:115px !important;
+    margin-left:0px !important;
+}
+    
+.ss-ud input:checked ~ article {
+    width:110px;
+    margin-left:10px;
+    padding:4px;
+    margin-top: 5px;
+}
+
+.ss-ud input:checked ~ article.ac-1-line {height:8px;}
+.ss-ud input:checked ~ article.ac-2-lines {height:16px;}
+.ss-ud input:checked ~ article.ac-3-lines {height:24px;}
+.ss-ud input:checked ~ article.ac-4-lines {height:32px;}
+.ss-ud input:checked ~ article.ac-5-lines {height:40px;}
+.ss-ud input:checked ~ article.ac-6-lines {height:48px;}
+.ss-ud input:checked ~ article.ac-7-lines {height:56px;}
+.ss-ud input:checked ~ article.ac-8-lines {height:64px;}
+.ss-ud input:checked ~ article.ac-9-lines {height:72px;}
+.ss-ud input:checked ~ article.ac-10-lines {height:80px;}
+.ss-ud input:checked ~ article.ac-11-lines {height:88px;}
+.ss-ud input:checked ~ article.ac-12-lines {height:96px;}
+.ss-ud input:checked ~ article.ac-13-lines {height:104px;}
+.ss-ud input:checked ~ article.ac-14-lines {height:112px;}
+.ss-ud input:checked ~ article.ac-15-lines {height:120px;}
+.ss-ud input:checked ~ article.ac-plus15-lines {height:120px;
+    overflow-y:scroll;}
+    
+.ac-plus15-lines::-webkit-scrollbar {height:auto; width:3px;
+    background:#eee;} 
+    
+.ac-plus15-lines::-webkit-scrollbar-thumb:vertical {height:auto;}
+    
+#hovertab, #hovertab img, #hovertab:hover, #hovertab:hover img,
+#hover-cont, #hovertab:hover #hover-cont, .h-title, .h-title-x, .close,
+.h-title:hover, .h-title-x:hover, .close:hover, .ss-ud article {
+    transition:all 0.4s ease-in-out;
+    -webkit-transition-duration:all 0.4s ease-in-out;
+    -o-transition-transition:all 0.4s ease-in-out;
+    -moz-transition-duration:all 0.4s ease-in-out;
+    -ms-transition-duration:all 0.4s ease-in-out;}
