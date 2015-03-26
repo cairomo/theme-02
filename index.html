@@ -15,25 +15,34 @@ mechanise.tumblr.com
 {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
  
  
-<meta name="color:text" content="#787878"/>
-<meta name="color:tags" content="#cccccc"/>
-<meta name="color:bg" content="#fff"/>
-<meta name="color:scrollbar" content="#000"/>
+<meta name="color:Text" content="#bbbbbb"/>
+<meta name="color:Desc" content="#bbbbbb"/>
+<meta name="color:Link" content="#aaaaaa"/>
+<meta name="color:Tags" content="#cccccc"/>
+<meta name="color:Hover" content="#f1f1f1"/>
+<meta name="color:scrollbar" content="#ffffff"/>
 <meta name="color:scrollbarbg" content="#ffffff"/>
+<meta name="color:bg" content="#fff"/>
 <meta name="color:accent" content="#E0E0E0"/>
 <meta name="color:borders" content="#E0E0E0"/>
  
-<meta name="image:sidebar" content="http://static.tumblr.com/f1ada2d48d38b844eb4101b6957df4bc/vmt2zlc/GOFnltdlb/tumblr_static_vze5hv2gapwg88soc8wk8cgg.png"/>
+<meta name="image:sidebar" content=""/>
  
- <meta name="text:body" content="Roboto"/>
-<meta name="text:link1" content="abt">
-<meta name="text:link1 url" content="/about">    
-<meta name="text:link2" content="past">
-<meta name="text:link2 url" content="/archive">
-<meta name="text:link3" content="ask">
-<meta name="text:link3 url" content="/ask">
+<meta name="text:body" content="Roboto"/>
+<meta name="text:link1" content="">
+<meta name="text:link1 url" content="/">    
+<meta name="text:link2" content="">
+<meta name="text:link2 url" content="/">
+<meta name="text:link3" content="">
+<meta name="text:link3 url" content="/">
 <meta name="text:link4" content="">
 <meta name="text:link4 url" content="/">
+ 
+<meta name="if:showcaption" content="1"/>
+<meta name="if:sidebarimg" content="0"/>
+<meta name="if:500px" content="0"/>
+<meta name="if:400px" content="1"/>
+<meta name="if:250px" content="0"/>
  
  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300,400italic' rel='stylesheet' type='text/css'>
  
@@ -60,12 +69,12 @@ mechanise.tumblr.com
 <style type="text/css">
 /*highlight text */
 ::selection {
-  background: {color:text}; /* WebKit/Blink Browsers */
-  color:{color:bg};
+  background: {color:link}; /* WebKit/Blink Browsers */
+  color:{color:postbackground};
 }
 ::-moz-selection {
-  background: {color:text}; /* WebKit/Blink Browsers */
-  color:{color:bg};
+  background: {color:link}; /* WebKit/Blink Browsers */
+  color:{color:accent};
 }
  
  
@@ -188,21 +197,33 @@ blockquote {
     position:absolute;
     margin-top:5px;
     opacity:1;
+{block:ifSidebarimg}
     background-color:{color:accent};
+{/block:ifSidebarimg}
 }
  
 #sidebarimage img {
+{block:ifSidebarimg}
     position:absolute;
     width:60px;
     opacity:1;
     padding:10px
+{block:ifSidebarimg}
+{block:ifNotSidebarimg}
+    display:none;
+ {/block:ifNotSidebarimg}   
 }
  
 .title {
     position:absolute;
     width: 400px;
     text-align: left;
-    margin: 10px 0 0 95px;
+{block:ifNotSidebarimg}
+margin: 10px 0 0 0px;
+{/block:ifNotSidebarimg}
+{block:ifSidebarimg}
+margin: 10px 0 0 95px;
+{/block:ifSidebarimg}
     font-family: {text:body};
     font-size: 20px;
     font-weight: 700;
@@ -213,16 +234,62 @@ blockquote {
  /* LINES */
  #separator { /* after title */
      position:absolute;
-     width:250px;
      margin-top:20px;
-     margin-left:250px;
+{block:ifNotSidebarimg}
+    margin-left:185px;
+    {block:if400px}
+         width:220px;
+    {/block:if400px}
+    {block:if500px}
+         width:335px;
+    {/block:if500px}
+    {block:if250px}
+         width:335px;
+    {/block:if250px}
+{/block:ifNotSidebarimg}
+{block:ifSidebarimg}
+    {block:if500px}
+        margin-left:270px; 
+        width:240px;
+    {/block:if500px}
+    {block:if250px}
+        margin-left:270px; 
+        width:240px;
+    {/block:if250px}
+    {block:if400px}
+        margin-left:270px; 
+        width:140px;
+    {/block:if400px}
+{/block:ifSidebarimg}
      border-bottom:1px solid;
  }
  #separator2 { /* before top links */
      position:absolute;
-     width:130px;
+{block:ifNotSidebarimg}
+    margin-left:0px; 
+    {block:if400px}
+         width:130px;
+    {/block:if400px}
+    {block:if500px}
+         width:230px;
+    {/block:if500px}
+    {block:if250px}
+         width:230px;
+    {/block:if250px}
+{/block:ifNotSidebarimg}
+{block:ifSidebarimg}
+    margin-left:95px;
+    {block:if500px}
+        width:130px;
+    {/block:if500px}
+    {block:if250px}
+        width:130px;
+    {/block:if250px}
+    {block:if400px}
+        width:100px;
+    {/block:if400px}
+{/block:ifSidebarimg}
      margin-top:75px;
-     margin-left:95px;
      border-bottom:1px solid;
  }
  
@@ -246,28 +313,77 @@ blockquote {
  }
  
  #divide {
-     position:absolute;
+{block:if500px}   
      width:150px;
      margin-top:-7px;
      margin-left:5px;
+{/block:if500px}
+{block:if400px}   
+     width:110px;
+     margin-top:-7px;
+     margin-left:1px;
+{/block:if400px}
+ {block:if250px}   
+     width:250px;
+     margin-top:-25px;
+     margin-left:0px;
+{/block:if250px}
+     position:absolute;
      border-bottom:1px solid {color:borders};
  }
  
  #divide2 {
      position:absolute;
+{block:if500px}
      width:150px;
      margin-top:-10px;
      margin-left:350px;
+{/block:if500px}
+{block:if400px}
+     width:110px;
+     margin-top:-10px;
+     margin-left:290px;
+{/block:if400px}
+{block:if250px}
+    display:none;
+{/block:if250px}
      border-bottom:1px solid {color:borders};
  }
  
 /*DESCRIPTION*/
 #desc {
     position:absolute;
-    text-align: center;
+    text-align: left;
     line-height: 150%;
-    width: 400px;
-    margin-left:85px;
+{block:ifNotSidebarimg}
+    {block:if500px}
+        width: 500px;
+        margin-left:0px;
+    {/block:if500px}
+    {block:if400px}
+        width: 500px;
+        margin-left:0px;
+    {/block:if400px}
+    {block:if250px}
+        width: 500px;
+        margin-left:0px;
+    {/block:if250px}
+{/block:ifNotSidebarimg}
+{block:ifSidebarimg}
+    {block:if500px}
+        width: 400px;
+        margin-left:85px;
+    {/block:if500px}
+    {block:if400px}
+        font-size:12px;
+        width: 300px;
+        margin-left:85px;
+    {/block:if400px}
+    {block:if250px}
+        width: 400px;
+        margin-left:85px;
+    {/block:if250px}
+{/block:ifSidebarimg}
     margin-top:28px;
     padding: 10px;
     text-transform: lowercase;
@@ -279,10 +395,41 @@ blockquote {
     position:center;
     left:50%;
     margin-top:55px;
-    margin-left:225px;
-    width:250px;
+{block:ifNotSidebarimg}
+    {block:if500px}
+        width:350px;
+        margin-left:235px;
+        word-spacing:15px;
+    {/block:if500px}
+    {block:if250px}
+        margin-left:235px;
+        width:350px;
+        word-spacing:15px;
+    {/block:if250px}
+    {block:if400px}
+        margin-left:125px;
+        width:250px;
+        word-spacing:10px;
+    {/block:if400px}
+{/block:ifNotSidebarimg}
+{block:ifSidebarimg}
+    {block:if500px}
+        margin-left:225px;
+        width:250px;
+        word-spacing:15px;
+    {/block:if500px}
+    {block:if250px}
+        margin-left:225px;
+        width:250px;
+        word-spacing:15px;
+    {/block:if250px}
+    {block:if400px}
+        margin-left:195px;
+        width:250px;
+        word-spacing:5px;
+    {/block:if400px}
+{/block:ifSidebarimg}
     padding:10px;
-    word-spacing:15px;
     text-align:left;
     text-transform:lowercase;
     font-style:bold;
@@ -298,8 +445,24 @@ blockquote {
      position:absolute;
      left:50%;
      margin-top:130px;
-     width:500px;
-     margin-left:-250px;
+{block:if500px}   
+    width:500px;
+{/block:if500px}
+ {block:if400px}   
+    width:400px;
+{/block:if400px}
+ {block:if250px}   
+    width:250px;
+{/block:if250px}
+ {block:if500px} 
+    margin-left:-250px;
+{/block:if500px} 
+{block:if400px} 
+    margin-left:-200px;
+{/block:if400px} 
+{block:if250px} 
+    margin-left:-125px;
+{/block:if250px} 
  }
  
 /*PAGINATION*/
@@ -321,17 +484,50 @@ blockquote {
 /*-----ENTRIES-----*/
 #entries {
     padding:10px;
+ {block:if500px}   
     width:500px;
+{/block:if500px}
+ {block:if400px}   
+    width:400px;
+{/block:if400px}
+ {block:if250px}   
+    width:250px;
+{/block:if250px}
     position:absolute;
     left:50%;
+{block:if500px} 
     margin-left:-250px;
+{/block:if500px} 
+{block:if400px} 
+    margin-left:-200px;
+{/block:if400px} 
+{block:if250px} 
+    margin-left:-125px;
+{/block:if250px} 
     margin-top:100px;
     font-size:14px;
     margin-bottom:50px;
 }
 
 #posts {
+{block:if500px}   
     width:500px;
+{/block:if500px}
+ {block:if400px}   
+    width:400px;
+{/block:if400px}
+ {block:if250px}   
+    width:250px;
+{/block:if250px}
+{block:if500px} 
+    margin-left:0px;
+{/block:if500px} 
+{block:if400px} 
+    margin-left:0px;
+{/block:if400px} 
+{block:if250px} 
+    margin-left:125px;
+{/block:if250px} 
     padding-bottom:20px;
     padding:10px;
     margin-top:250px;
@@ -348,9 +544,19 @@ blockquote {
  
 /*POST INFO*/
 #info {
-    width:500px;
-    padding-top:8px;
+ {block:if500px} 
     margin-top:15px;
+    width:500px;
+{/block:if500px}
+ {block:if400px}   
+    margin-top:15px;
+    width:400px;
+{/block:if400px}
+ {block:if250px} 
+    margin-top:35px;
+    width:250px;
+{/block:if250px}
+    padding-top:8px;
     font-size:12px;
     margin-left:-1px;
     font-style:normal;
@@ -365,6 +571,10 @@ blockquote {
     margin-top:-20px;
 }
  
+#info a:hover{
+    color:{color:links};
+}
+
 #perm {
     margin-top:-17px;
     text-align:center;
@@ -382,8 +592,18 @@ blockquote {
  
 /*TAGS*/
 #tags {
+ {block:if500px}   
     width:480px;
     margin-left:20px;
+{/block:if500px}
+ {block:if400px}   
+    width:380px;
+    margin-left:10px;
+{/block:if400px}
+ {block:if250px}   
+    width:230px;
+    margin-left:5px;
+{/block:if250px}
     text-align:left;
 }
 #tags a {
@@ -442,7 +662,7 @@ blockquote {
 /* --- AUDIO ---*/
  .audio {
     height:85px;
-    margin-bottom:-10px;
+    margin-bottom:10px;
 }
 
 .audio-album {
@@ -560,6 +780,8 @@ blockquote {
      
          <div id="separator2"></div>
         <div class="links">
+            <a href="/">home</a>
+            <a href="/ask">ask</a>
             <a href="{text:link1 url}">{text:link1}</a>
             <a href="{text:link2 url}">{text:link2}</a>
             <a href="{text:link3 url}">{text:link3}</a>
@@ -572,13 +794,22 @@ blockquote {
 {block:Text}{block:Title}<h1>{Title}</h1>{/block:Title}{Body}{/block:Text}
  
  
-{block:Photo}{LinkOpenTag}<img src="{PhotoURL-500}">{LinkCloseTag}{block:Caption}{Caption}{/block:Caption}{/block:Photo}
+{block:Photo}{LinkOpenTag}
+{block:if500px}<img src="{PhotoURL-500}">{/block:if500px}
+{block:if400px}<img src="{PhotoURL-400}">{/block:if400px}
+{block:if250px}<img src="{PhotoURL-250}">{/block:if250px}
+{LinkCloseTag}
+{block:ifShowCaption}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaption}{/block:Photo}
  
  
 {block:Link}<h1><a href="{URL}" {Target}>{Name}</a></h1>{block:Description}{Description}{/block:Description}{/block:Link}
  
  
-{block:Photoset}{Photoset-500}{block:Caption}{Caption}{/block:Caption}{/block:Photoset}
+{block:Photoset}
+{block:if500px}{Photoset-500}{/block:if500px}
+{block:if400px}{Photoset-400}{/block:if400px}
+{block:if250px}{Photoset-250}{/block:if250px}
+{block:ifShowCaption}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaption}{/block:Photoset}
  
  
 {block:Quote}<div class="quote">&ldquo; {Quote} &bdquo;</div>{block:Source} <div class="quotesource">&mdash;&nbsp;{Source}</div>{/block:Source}{/block:Quote}
@@ -596,11 +827,15 @@ blockquote {
         {block:Album}<i>Album: {Album}</i>{/block:Album}
     </div>
 </div>
-{block:Caption}<br>{Caption}{/block:Caption}
+{block:ifShowCaption}{block:Caption}<br>{Caption}{/block:Caption}{/block:ifShowCaption}
 {/block:Audio}
  
  
-{block:Video}{Video-500}{block:Caption}{Caption}{/block:Caption}{/block:Video}
+{block:Video}
+{block:if500px}{Video-500}{/block:if500px}
+{block:if400px}{Video-400}{/block:if400px}
+{block:if250px}{Video-250}{/block:if250px}
+{block:ifShowCaption}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaption}{/block:Video}
  
  
 {block:Chat}
