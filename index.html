@@ -651,8 +651,8 @@ margin: 10px 0 0 95px;
     font-family:{text:body};
     font-style:normal;
     line-height:17px;
-   margin-top: -25px;
-  padding-left: 15px;
+    padding-left: 25px;
+    margin-top:25px;
     text-transform:normal;
     text-align:left;
     font-weight:normal;
@@ -665,11 +665,9 @@ margin: 10px 0 0 95px;
       font-size: 72px;
       display: inline-block;
       position: absolute;
-      margin-top: 45px;
+      margin-top: 0px;
       margin-left: -20px;
 }
-
- 
 .quotesource {
     font-size:14px;
     text-align:right;
@@ -835,7 +833,7 @@ margin: 10px 0 0 95px;
 {block:ifShowCaption}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaption}{/block:Photoset}
  
  
-{block:Quote}<div class="quote">&nbsp;&nbsp;&nbsp;&nbsp;{Quote}</div>{block:Source} <div class="quotesource">&mdash;&nbsp;{Source}</div>{/block:Source}{/block:Quote}
+{block:Quote}<div class="quote">{Quote}</div>{block:Source} <div class="quotesource">&mdash;&nbsp;{Source}</div>{/block:Source}{/block:Quote}
  
  
 {block:Audio}
