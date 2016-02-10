@@ -554,6 +554,15 @@ margin: 10px 0 0 95px;
  
  #posts img {
      overflow-x:scroll;
+     {block:if500px} 
+        width:500px;
+    {/block:if500px}
+     {block:if400px}  
+        width:400px;
+    {/block:if400px}
+     {block:if250px}
+        width:250px;
+    {/block:if250px}
  }
  
 /*POST INFO*/
@@ -642,6 +651,10 @@ margin: 10px 0 0 95px;
     border:1px solid #eee;
     margin-bottom:-4px;
 }
+
+.caption {
+    padding-top:0;
+}
  
  
 /* --- QUOTE ---*/
@@ -685,7 +698,7 @@ margin: 10px 0 0 95px;
 
 .audio-album {
     position:absolute;
-    width:85px;
+    width:85px!important;
 }
 .audio-player {
     opacity:.0;
@@ -871,7 +884,7 @@ margin: 10px 0 0 95px;
 {block:if400px}<img src="{PhotoURL-400}">{/block:if400px}
 {block:if250px}<img src="{PhotoURL-250}">{/block:if250px}
 {LinkCloseTag}
-{block:ifShowCaption}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaption}{/block:Photo}
+{block:ifShowCaption}<div class="caption">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaption}{/block:Photo}
  
  
 {block:Link}<h1><a href="{URL}" {Target}>{Name}</a></h1>{block:Description}{Description}{/block:Description}{/block:Link}
@@ -881,7 +894,7 @@ margin: 10px 0 0 95px;
 {block:if500px}{Photoset-500}{/block:if500px}
 {block:if400px}{Photoset-400}{/block:if400px}
 {block:if250px}{Photoset-250}{/block:if250px}
-{block:ifShowCaption}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaption}{/block:Photoset}
+{block:ifShowCaption}<div class="caption">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaption}{/block:Photoset}
  
  
 {block:Quote}<div class="quote">{Quote}</div>{block:Source} <div class="quotesource">&mdash;&nbsp;{Source}</div>{/block:Source}{/block:Quote}
@@ -899,7 +912,7 @@ margin: 10px 0 0 95px;
         {block:Album}<i>Album: {Album}</i>{/block:Album}
     </div>
 </div>
-{block:ifShowCaption}{block:Caption}<br>{Caption}{/block:Caption}{/block:ifShowCaption}
+{block:ifShowCaption}<div class="caption">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaption}
 {/block:Audio}
  
  
@@ -907,7 +920,7 @@ margin: 10px 0 0 95px;
 {block:if500px}{Video-500}{/block:if500px}
 {block:if400px}{Video-400}{/block:if400px}
 {block:if250px}{Video-250}{/block:if250px}
-{block:ifShowCaption}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaption}{/block:Video}
+{block:ifShowCaption}<div class="caption">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaption}{/block:Video}
  
  
 {block:Chat}
@@ -986,7 +999,6 @@ margin: 10px 0 0 95px;
 <div id="c"><a href="http://mechanise.tumblr.com" title="theme by mechanise">M</a></div></center>
  
  
-<!--DON'T DELETE THIS CODE IF YOU DON'T WANT TO SEE THE SOURCE UNDER THE IMAGE/TEXT-->
 {block:ContentSource}
 <!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
 width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
